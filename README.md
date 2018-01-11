@@ -37,20 +37,33 @@ sudo apt-get install ros-indigo-joystick-drivers
 
 ## Usage
 
+### ar_pid
+
 AR.drone driver
 ```bash
 roslaunch ardrone_autonomy my_driver.launch
 ```
 
 ar tracking
+
+カメラは`bottom_cam`にしておく
+
 ```bash
 roslaunch ar_tracking ar_track.launch
-rviz -d $(roack find ar_tracking)/data/rviz_config.rviz
+rviz -d $(rospack find ar_tracking)/data/rviz_config.rviz
 
 roslaunch ar_tracking ar_pid.launch
 ```
 
 ![](image/rviz.png)
+
+### orb_scale_estimator
+
+```bash
+roslaunch ar_tracking orb_scale_estimator.launch
+```
+
+![](image/orb_scale.png)
 
 ## Details
 
@@ -64,3 +77,12 @@ arマーカを認識するためのローンチファイル．
 
 joyによるマニュアル操作`Manual Mode`とarマーカを追跡する`Tracking Mode`をL2により切り替える．  
 ただし，`Tracking Mode`が実行できるのはarマーカを認識しているときのみで，認識できなければ自動で`Manual Mode`に切り替わる．
+
+### orb_scale_estimator.launch
+
+[https://github.com/lancer-evolution/ardrone_testbed](https://github.com/lancer-evolution/ardrone_testbed)
+にある、ORB_SLAMのスケールを推定する．  
+`orb_slam`と`ar_track_alvar`を事前に起動しておく必要がある．  
+スケールの推定には、orbとar_trackerの移動量から線形的に求めている．また，収束判定には変動係数を用いることで，orbのスケール不変性に対処している．
+
+

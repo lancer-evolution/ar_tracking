@@ -26,3 +26,5 @@ include_directories(
 
 add_executable(ar_pid src/ar_pid.cpp)
 target_link_libraries(ar_pid ${catkin_LIBRARIES})
+add_executable(orb_scale_estimator src/orb_scale_estimator.cpp)
+target_link_libraries(orb_scale_estimator ${catkin_LIBRARIES})
