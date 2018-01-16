@@ -1,6 +1,6 @@
 # ar_tracking
 
-AR.droneのカメラより，arマーカをPID制御で追跡するためのリポジトリ．
+AR.droneのカメラより，arマーカをPID制御で追跡するためのリポジトリ．その他
 
 ![](image/image.JPG)
 
@@ -65,6 +65,14 @@ roslaunch ar_tracking orb_scale_estimator.launch
 
 ![](image/orb_scale.png)
 
+### ar_trans_publish
+
+```bash
+roslaunch ar_tracking ar_trans_publisher.launch
+```
+
+![](image/ar_trans_publisher.gif)
+
 ## Details
 
 ### ar_track.launch
@@ -85,4 +93,7 @@ joyによるマニュアル操作`Manual Mode`とarマーカを追跡する`Trac
 `orb_slam`と`ar_track_alvar`を事前に起動しておく必要がある．  
 スケールの推定には、orbとar_trackerの移動量から線形的に求めている．また，収束判定には変動係数を用いることで，orbのスケール不変性に対処している．
 
+### ar_trans_publish.launch
 
+ARマーカを用いて，orb_slamの位置を初期化する．  
+`base_link`からARマーカ用の`marker_link`の位置を指定し，`marker_link1`が検出されたらそれが`marker_link`と重なるように，`base_link`と`odom`の変換をする．

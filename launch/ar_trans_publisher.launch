@@ -1,0 +1,20 @@
+<launch>
+	<node name="ar_trans_publisher" pkg="ar_tracking" type="ar_trans_publisher" output="screen">
+	  <!-- fix frame -->
+	  <param name="base_link" type="string" value="velodyne" />
+	  <!-- orb odom frame -->
+	  <param name="odom" type="string" value="odom" />
+	  <!-- maker link -->
+	  <param name="marker_link" type="string" value="marker_link" />
+	  <!-- ar_marker name -->
+	  <param name="marker_link1" type="string" value="ar_marker_1" />
+
+	  <!-- fix frame to marker link : right hand role  -->
+	  <param name="x" type="double" value="0" />
+	  <param name="y" type="double" value="0.6" />
+	  <param name="z" type="double" value="-0.6" />
+	  <param name="roll" type="double" value="0" />
+	  <param name="pitch" type="double" value="0" />
+	  <param name="yaw" type="double" value="-90" />
+	</node>
+</launch>
