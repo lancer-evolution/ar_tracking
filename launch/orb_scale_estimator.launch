@@ -2,6 +2,6 @@
 	<node name="orb_scale_estimator" pkg="ar_tracking" type="orb_scale_estimator" output="screen">
 	  <param name="camera_link" type="string" value="orb_pose_unscaled_cam" />
 	  <param name="marker_link" type="string" value="ar_marker_1" />
-	  <param name="scale_thresh" type="double" value="0.7" />
+	  <param name="scale_thresh" type="double" value="0.5" />
 	</node>
 </launch>

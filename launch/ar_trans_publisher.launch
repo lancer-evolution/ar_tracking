@@ -12,7 +12,7 @@
 	  <!-- fix frame to marker link : right hand role  -->
 	  <param name="x" type="double" value="0" />
 	  <param name="y" type="double" value="0.6" />
-	  <param name="z" type="double" value="-0.6" />
+	  <param name="z" type="double" value="-0.7" />
 	  <param name="roll" type="double" value="0" />
 	  <param name="pitch" type="double" value="0" />
 	  <param name="yaw" type="double" value="-90" />

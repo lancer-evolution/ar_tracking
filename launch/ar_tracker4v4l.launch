@@ -5,14 +5,15 @@
 
 	<arg name="cam_image_topic" default="/v4l_tis/image_raw" />
 	<arg name="cam_info_topic" default="/v4l_tis/camera_info" />
-	<arg name="output_frame" default="/orb_pose_scaled_cam" />
+	<arg name="output_frame" default="/orb_pose_unscaled_cam" />
+	<arg name="output_frame2" default="/orb_pose_scaled_cam" />
 	<!-- <arg name="output_frame" default="/ardrone_base_link" /> -->
 
 	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
 		<param name="marker_size"           type="double" value="$(arg marker_size)" />
 		<param name="max_new_marker_error"  type="double" value="$(arg max_new_marker_error)" />
 		<param name="max_track_error"       type="double" value="$(arg max_track_error)" />
-		<param name="output_frame"          type="string" value="$(arg output_frame)" />
+		<param name="output_frame"          type="string" value="$(arg output_frame2)" />
 
 		<remap from="camera_image"  to="$(arg cam_image_topic)" />
 		<remap from="camera_info"   to="$(arg cam_info_topic)" />

@@ -97,3 +97,16 @@ joyによるマニュアル操作`Manual Mode`とarマーカを追跡する`Trac
 
 ARマーカを用いて，orb_slamの位置を初期化する．  
 `base_link`からARマーカ用の`marker_link`の位置を指定し，`marker_link1`が検出されたらそれが`marker_link`と重なるように，`base_link`と`odom`の変換をする．
+
+
+## 追加ツール
+
+### pointcloud_to_pcd
+
+`pointcloud2`から`pcd`ファイルに保存する
+
+```bash
+roslaunch ar_tracking pointcloud_to_pcd.launch
+```
+
+`fixed_frame`を設定することで，その座標から見た点群で保存できる．

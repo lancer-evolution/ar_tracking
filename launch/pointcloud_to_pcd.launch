@@ -1,0 +1,11 @@
+<launch>
+  <param name="binary" type="bool" value="false" />
+	<node name="pointcloud_to_pcd" pkg="ar_tracking" type="pointcloud_to_pcd" output="screen" >
+	  <remap from="input" to="orb/point_cloud2" />
+	  <!-- fix frame -->
+	  <param name="fixed_frame" type="string" value="velodyne" />
+	  <!-- <param name="binary" type="bool" value="true" /> -->
+	  <!-- <param name="compressed" type="bool" value="true" /> -->
+	  <!-- <param name="prefix" type="string" value="velodyne" /> -->
+	</node>
+</launch>
